@@ -1,0 +1,190 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fef7f1;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.imagem-animal {
+    display: block;
+    max-width: 100%;
+    max-height: 400px;
+    width: auto;
+    height: auto;
+    margin: 0 auto 25px auto;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.detalhes-animal {
+    max-width: 700px;
+    margin: 50px auto;
+    background-color: #fffaf5;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ffb347;
+}
+
+.detalhes-animal h2 {
+    color: #ff7f50;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.detalhes-animal p {
+    margin: 10px 0;
+    color: #333;
+    font-size: 16px;
+}
+
+.detalhes-animal strong {
+    color: #ff7f50;
+}
+
+.voltar-animal {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #ffb347;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.voltar-animal:hover {
+    background-color: #ff9966;
+}
+
+.btn-adotar {
+    margin-top: 20px;
+    background-color: #ffb347;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+
+.btn-adotar:hover {
+    background-color: #ff9966;
+    transform: scale(1.02);
+}
+
+.status-adotado {
+    color: #008000;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* ====== NOVOS ESTILOS PARA TABELA E FORMULÁRIO ====== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px auto;
+    max-width: 1100px;
+    background-color: #fffaf5;
+    border: 1px solid #ffb347;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 15px;
+}
+
+thead {
+    background-color: #ffb347;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #fff3e0;
+}
+
+tr:hover {
+    background-color: #ffe0b3;
+}
+
+a {
+    color: #ff7f50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+form {
+    max-width: 600px;
+    margin: 30px auto;
+    background-color: #fffaf5;
+    border: 2px solid #ffb347;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="file"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 4px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+form button[type="submit"] {
+    background-color: #ffb347;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+    background-color: #ff9966;
+}
+
+/* Responsividade básica */
+@media (max-width: 768px) {
+    .detalhes-animal,
+    form,
+    table {
+        margin: 20px;
+        width: calc(100% - 40px);
+    }
+
+    table th, table td {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
