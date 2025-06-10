@@ -1,0 +1,80 @@
+/* Estilos para a página de login - tema adoção de animais 🐾 */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fef7f1; /* fundo bege suave */
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*background-image: url('https://i.imgur.com/UvBt6ln.png'); /* opcional: uma textura leve de patinhas */
+    background-repeat: repeat;
+    background-size: 100px;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    background-color: #fffaf5; /* fundo claro */
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 2px solid #ffb347; /* tom laranja alegre */
+}
+
+h2 {
+    color: #ff7f50; /* coral/laranja para dar tom alegre */
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 26px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #ffa07a;
+    box-shadow: 0 0 8px rgba(255, 160, 122, 0.5);
+    outline: none;
+}
+
+button {
+    background-color: #ffb347; /* laranja */
+    color: #fff;
+    padding: 14px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #ff9966;
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+.erro {
+    color: #d9534f;
+    margin-bottom: 15px;
+    font-weight: bold;
+}

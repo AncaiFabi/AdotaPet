@@ -4,26 +4,39 @@ require_once __DIR__ . '/../controllers/SiteController.php';
 require_once __DIR__ . '/../controllers/UsuarioController.php';
 
 $pagina = $_GET['p'] ?? '';
+$pagina = explode('?', $pagina)[0]; // remove parâmetros da query
 $url = explode('/', $pagina);
 
+
 match ($url[0]) {
-    //CRUD de animais
+    // CRUD de animais
     'animal' => match ($url[1] ?? 'index') {
         'add'        => AnimalController::cadastrar(),
         'editar'     => AnimalController::editar($url[2] ?? null),
         'atualizar'  => AnimalController::atualizar(),
         'apagar'     => AnimalController::apagar($url[2] ?? null),
         'detalhe'    => AnimalController::detalhe($url[2] ?? null),
+        'adotar'     => AnimalController::adotar($url[2] ?? null),
+        'adotados'   => AnimalController::adotados(),
         default      => AnimalController::listar(),
     },
 
-    //páginas públicas
+    'usuario' => match ($url[1] ?? 'index') {
+        'formCadastro'    => UsuarioController::formCadastro(),
+        'cadastrar'       => UsuarioController::cadastrar(),
+        'formLogin'       => UsuarioController::formLogin(),
+        'login'           => UsuarioController::login(),
+        'logout'          => UsuarioController::logout(),
+        'recuperarSenha'  => UsuarioController::recuperarSenha(),
+        'atualizarSenha'  => UsuarioController::atualizarSenha(), // 🔧 ADICIONADO!
+        default           => UsuarioController::formLogin(),
+    },
+
+    // páginas públicas
     'home'    => SiteController::home(),
     'animais' => SiteController::listaPublica(),
-    //possível uso futuro
-    // 'sobre'   => SiteController::sobre(),
-    // 'contato' => SiteController::contato(),
+    'sobre'   => SiteController::sobre(),
 
-    //padrão (fallback)
-    default => SiteController::home(),
+    // padrão (fallback)
+    default => UsuarioController::formLogin(),
 };
