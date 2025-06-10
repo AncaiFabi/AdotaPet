@@ -1,4 +1,7 @@
 <?php
+require_once __DIR__ . '/../models/Categoria.php';
+$categorias = Categoria::listar();
+
 $estamosEditando = isset($animal) && !empty($animal->id);
 $action = $estamosEditando 
     ? "index.php?p=animal/atualizar" 
@@ -7,7 +10,7 @@ $action = $estamosEditando
 
 <h2><?= $estamosEditando ? 'Editar Animal' : 'Cadastro de Animal' ?></h2>
 
-<form method="POST" action="<?= $action ?>">
+<form method="POST" action="<?= $action ?>" enctype="multipart/form-data">
     <?php if ($estamosEditando): ?>
         <input type="hidden" name="id" value="<?= $animal->id ?>">
     <?php endif; ?>
@@ -32,11 +35,23 @@ $action = $estamosEditando
 
     <label for="categoria">Categoria:</label><br>
     <select name="categoria">
-        <option value="1" <?= (isset($animal) && $animal->categoria == 'Cachorro') ? 'selected' : '' ?>>Cachorro</option>
-        <option value="2" <?= (isset($animal) && $animal->categoria == 'Gato') ? 'selected' : '' ?>>Gato</option>
+        <?php foreach ($categorias as $cat): ?>
+            <option value="<?= $cat->id ?>"
+                <?= (isset($animal) && $animal->categoria_id == $cat->id) ? 'selected' : '' ?>>
+                <?= htmlspecialchars($cat->nome) ?>
+            </option>
+        <?php endforeach; ?>
     </select><br><br>
+
+    <label for="imagem">Foto do animal:</label><br>
+    <input type="file" name="imagem" accept="image/*"><br><br>
+
+    <?php if ($estamosEditando && !empty($animal->imagem)): ?>
+        <p>Imagem atual:</p>
+        <img src="<?= htmlspecialchars($animal->imagem) ?>" alt="Imagem atual de <?= htmlspecialchars($animal->nome) ?>" style="width: 120px; height: 120px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);"><br><br>
+    <?php endif; ?>
 
     <button type="submit">Salvar</button>
     <br><br>
-    <a href="index.php?p=animal">⬅️ Voltar para a lista</a>
+    <a href="index.php?p=animais">⬅️ Voltar para a lista</a>
 </form>
