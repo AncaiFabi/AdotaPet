@@ -18,5 +18,6 @@ class SiteController {
     public static function contato() {
         include __DIR__ . '/../views/contato.php';
     }
+
 }
 ?>

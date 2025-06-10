@@ -4,9 +4,9 @@ class ConexaoBD {
     public static function getConexao() {
         $host     = "localhost";
         $usuario  = "root";
-        $senha    = "root";
+        $senha    = "";
         $banco    = "adotapet";
-        $porta    = 8889;
+        $porta    = 3306;
 
         $conn = new mysqli($host, $usuario, $senha, $banco, $porta);
 
