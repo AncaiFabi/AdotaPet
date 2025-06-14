@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>🐾 Meus Animais Adotados</title>
+    <link rel="stylesheet" href="css/adotados.css" />
 </head>
 <body>
 
