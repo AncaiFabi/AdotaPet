@@ -1,3 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Animais para adocao</title>
+    <link rel="stylesheet" href="css/animais.css">
+    <link rel="stylesheet" href="css/home.css">
+
+</head>
+<body>
+    <section class="logo-container">
+        <img src="../public/img/cabecalho.png" alt="Logo" class="img-logo">
+    </section>
+    <header>
+    <nav class="menu">
+        <a href="index.php?p=home">🏠 Início </a>
+        <a href="index.php?p=animais">🐾 Adote</a>
+        <a href="index.php?p=animal/adotados">🐾 Meus Animais Adotados</a>
+        <a href="index.php?p=sobre">ℹ️ Sobre</a>
+        <a href="index.php?p=usuario/logout">🚪 Sair</a>
+    </nav>
+</header>
+</body>
+</html>
+
 <?php
 session_start();
 if (!isset($_SESSION['usuario_id'])) {
@@ -6,14 +31,17 @@ if (!isset($_SESSION['usuario_id'])) {
 }
 ?>
 
-<h2>Animais para Adoção</h2>
+<h3>Animais para Adoção</h3>
 
-<!-- Botão para adicionar novo animal -->
-<a href="index.php?p=animal/add">
-    <button style="margin-bottom: 15px; padding: 8px 12px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">
-        ➕ Adicionar novo animal
-    </button>
-</a>
+<div class="botoes-container">
+    <a href="index.php?p=animal/add">
+        <button class="botao-acao">➕Adicionar novo animal</button>
+    </a>
+
+    <a href="index.php?p=home">
+        <button class="botao-acao">⬅️ Voltar à página inicial</button>
+    </a>
+</div>
 
 <table border="1" cellpadding="8">
     <tr>
@@ -28,7 +56,7 @@ if (!isset($_SESSION['usuario_id'])) {
     <?php foreach ($animais as $animal): ?>
         <tr>
             <td>
-                <?php if (!empty($animal->imagem)): ?>
+                <?php if (!empty($animal->imagem)): ?> //ADICIONAR IMAGENS DOS ANIMAIS
                     <img src="<?= $animal->imagem ?>" alt="Foto de <?= $animal->nome ?>" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px;">
                 <?php else: ?>
                     <span style="color: #aaa;">Sem imagem</span>
@@ -45,5 +73,12 @@ if (!isset($_SESSION['usuario_id'])) {
     <?php endforeach; ?>
 </table>
 
-<br>
-<a href="index.php?p=home">⬅️ Voltar à home</a>
+<a href="index.php?p=home">
+    <button style="margin-bottom: 15px; padding: 8px 12px; background-color: #5A4D3F; color: white; border: none; border-radius: 4px; cursor: pointer;">
+        ⬅️ Voltar à página inicial
+    </button>
+</a>
+
+<footer>
+    <p>© 2025 Adota Pet. Todos os direitos reservados.</p>
+</footer>
