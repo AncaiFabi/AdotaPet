@@ -1,3 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cadastro de animais</title>
+
+    <link rel="stylesheet" href="css/formAnimais.css" />
+    <link rel="stylesheet" href="css/home.css" />
+
+</head>
+<body>
+
+<section class="logo-container">
+    <img src="../public/img/cabecalho.png" alt="Logo" class="img-logo">
+</section>  
+    <nav class="menu">
+        <a href="index.php?p=home">🏠 Início</a>
+        <a href="index.php?p=animais">🐾 Adote</a>
+        <a href="index.php?p=animal/adotados">🐾 Meus Animais Adotados</a>
+        <a href="index.php?p=sobre">ℹ️ Sobre</a>
+        <a href="index.php?p=usuario/logout">🚪 Sair</a>
+    </nav> 
+
 <?php
 require_once __DIR__ . '/../models/Categoria.php';
 $categorias = Categoria::listar();
@@ -10,6 +34,11 @@ $action = $estamosEditando
 
 <h2><?= $estamosEditando ? 'Editar Animal' : 'Cadastro de Animal' ?></h2>
 
+<a href="index.php?p=animais" 
+style="margin-top: 2px; padding: 8px 20px; background-color: #5A4D3F; color: white; border: none; border-radius: 4px; cursor: pointer;">
+⬅️ Voltar para a lista de animais
+</a>
+  
 <form method="POST" action="<?= $action ?>" enctype="multipart/form-data">
     <?php if ($estamosEditando): ?>
         <input type="hidden" name="id" value="<?= $animal->id ?>">
@@ -52,6 +81,14 @@ $action = $estamosEditando
     <?php endif; ?>
 
     <button type="submit">Salvar</button>
-    <br><br>
-    <a href="index.php?p=animais">⬅️ Voltar para a lista</a>
+    <br> <br>
+    <a href="index.php?p=animais" 
+    style="margin-bottom: 15px; padding: 8px 12px; background-color: #5A4D3F; color: white; border: none; border-radius: 8px; cursor: pointer;">
+    ⬅️ Voltar para a lista de animais
+    </a>
 </form>
+<footer>
+    <p>© 2025 Adota Pet. Todos os direitos reservados.</p>
+</footer>
+</body>
+</html>
