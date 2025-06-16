@@ -1,0 +1,133 @@
+.container {
+    max-width: 1200px;
+    margin: 0;
+    background: #fff;
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Título */
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 28px;
+    color: #8b4513;
+}
+
+/* Botão adicionar animal */
+.add-animal-btn {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 18px;
+    background-color: #ff914d;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.add-animal-btn:hover {
+    background-color: #e67e22;
+}
+
+/* Tabela */
+table {
+    width: 90%;
+    border-collapse: collapse;
+    margin: 0 auto 30px auto;
+}
+
+th, td {
+    padding: 12px 16px;
+    text-align: left;
+}
+
+thead {
+    background-color: #f4d3a1;
+}
+
+thead th {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+tbody tr {
+    border-bottom: 1px solid #eaeaea;
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+    background-color: #fff8ed;
+}
+
+td img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Ações */
+td[data-label="Ações"] a {
+    color: #4a90e2;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 8px;
+}
+
+td[data-label="Ações"] a:hover {
+    text-decoration: underline;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: #777;
+    margin-top: 40px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tbody tr {
+        margin-bottom: 15px;
+        padding: 10px;
+        background-color: #fffdf9;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+    }
+
+    td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border: none;
+    }
+
+    td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #444;
+    }
+
+    td img {
+        max-width: 80px;
+    }
+
+    .add-animal-btn {
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -73,7 +73,8 @@ class AnimalController {
 
     if ($id_animal) {
         Animal::adotarAnimal($id_animal, $_SESSION['usuario_id']);
-        echo "Animal adotado com sucesso! <a href='index.php?p=animal/adotados'>Ver meus animais adotados</a>";
+        header ("Location: index.php?p=animal/adotados");
+        exit;
     } else {
         echo "ID do animal inválido.";
     }
