@@ -6,14 +6,13 @@ class ConexaoBD {
         $usuario  = "root";
         $senha    = "";
         $banco    = "adotapet";
-        $porta    = 3306;
+        $porta    = 3307;
 
         $conn = new mysqli($host, $usuario, $senha, $banco, $porta);
 
         if ($conn->connect_error) {
             die("Erro na conexão: " . $conn->connect_error);
         }
-
         return $conn;
     }
 }

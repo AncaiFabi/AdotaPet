@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Definir Nova Senha</title>
-    <link rel="stylesheet" href="css/definirNovaSenha.css"> <!-- Usa o mesmo CSS, ou crie um novo -->
+    <link rel="stylesheet" href="css/definirNovaSenha.css"> 
 </head>
 <body>
     <div class="nova-senha-container">

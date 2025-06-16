@@ -12,8 +12,6 @@ class Animal {
         JOIN categoria c ON c.id = a.categoria_id";
         $result = $conn->query($sql);
 
-        //var_dump($result); // debug solicitado pelo professor
-
         while ($a = $result->fetch_object()) {
             $animais[] = $a;
         }
@@ -33,11 +31,9 @@ class Animal {
     $conn = ConexaoBD::getConexao();
     $result = $conn->query($sql);
 
-    // >>> ADICIONAR este if para debug seguro <<<
     if (!$result) {
         die("Erro na consulta: " . $conn->error . "<br>SQL: $sql");
     }
-
     return $result->fetch_object();
     }
 
@@ -50,14 +46,12 @@ class Animal {
         $idade       = $dados['idade'];
         $categoriaId = $dados['categoria'];
 
-        // Upload da imagem
         $imagemPath = null;
         if (isset($arquivoImagem['tmp_name']) && is_uploaded_file($arquivoImagem['tmp_name'])) {
             $ext = pathinfo($arquivoImagem['name'], PATHINFO_EXTENSION);
             $nomeArquivo = uniqid("animal_") . "." . $ext;
             $caminhoFinal = "uploads/animais/" . $nomeArquivo;
 
-            // Criar diretório se não existir
             if (!is_dir("uploads/animais")) {
                 mkdir("uploads/animais", 0777, true);
             }
@@ -126,8 +120,6 @@ class Animal {
     return $conn->query($sql);
 }
 
-
-
     public static function listarAnimaisPorUsuario($id_usuario) {
     $animais = [];
     $conn = ConexaoBD::getConexao();
@@ -148,7 +140,5 @@ class Animal {
 
     return $animais;
 }
-
 }
-
 ?>

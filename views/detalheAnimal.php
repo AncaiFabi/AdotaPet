@@ -14,7 +14,6 @@
     <p><strong>Descrição:</strong> <?= nl2br(htmlspecialchars($animal->descricao)) ?></p>
     <p><strong>Categoria:</strong> <?= htmlspecialchars($animal->categoria_nome) ?></p>
 
-    <!-- ✅ Link corrigido -->
     <a class="voltar-animal" href="index.php?p=animais">⬅️ Voltar para a lista</a>
 
     <?php if (isset($_SESSION['usuario_id']) && !$animal->adotado): ?>

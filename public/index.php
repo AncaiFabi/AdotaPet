@@ -4,12 +4,11 @@ require_once __DIR__ . '/../controllers/SiteController.php';
 require_once __DIR__ . '/../controllers/UsuarioController.php';
 
 $pagina = $_GET['p'] ?? '';
-$pagina = explode('?', $pagina)[0]; // remove parâmetros da query
+$pagina = explode('?', $pagina)[0];
 $url = explode('/', $pagina);
 
 
 match ($url[0]) {
-    // CRUD de animais
     'animal' => match ($url[1] ?? 'index') {
         'add'        => AnimalController::cadastrar(),
         'editar'     => AnimalController::editar($url[2] ?? null),
@@ -28,15 +27,13 @@ match ($url[0]) {
         'login'           => UsuarioController::login(),
         'logout'          => UsuarioController::logout(),
         'recuperarSenha'  => UsuarioController::recuperarSenha(),
-        'atualizarSenha'  => UsuarioController::atualizarSenha(), // 🔧 ADICIONADO!
+        'atualizarSenha'  => UsuarioController::atualizarSenha(), 
         default           => UsuarioController::formLogin(),
     },
 
-    // páginas públicas
     'home'    => SiteController::home(),
     'animais' => SiteController::listaPublica(),
     'sobre'   => SiteController::sobre(),
 
-    // padrão (fallback)
     default => UsuarioController::formLogin(),
 };

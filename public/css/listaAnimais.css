@@ -8,7 +8,6 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-/* Título */
 h2 {
     text-align: center;
     margin-bottom: 25px;
@@ -16,7 +15,6 @@ h2 {
     color: #8b4513;
 }
 
-/* Botão adicionar animal */
 .add-animal-btn {
     display: inline-block;
     margin-bottom: 20px;
@@ -33,7 +31,6 @@ h2 {
     background-color: #e67e22;
 }
 
-/* Tabela */
 table {
     width: 90%;
     border-collapse: collapse;
@@ -70,7 +67,6 @@ td img {
     border-radius: 8px;
 }
 
-/* Ações */
 td[data-label="Ações"] a {
     color: #4a90e2;
     text-decoration: none;
@@ -82,7 +78,6 @@ td[data-label="Ações"] a:hover {
     text-decoration: underline;
 }
 
-/* Rodapé */
 footer {
     text-align: center;
     padding: 20px;
@@ -91,7 +86,6 @@ footer {
     margin-top: 40px;
 }
 
-/* Responsivo */
 @media (max-width: 768px) {
     table, thead, tbody, th, td, tr {
         display: block;

@@ -16,7 +16,6 @@ class Usuario {
     return ConexaoBD::getConexao()->query($sql);
 }
 
-
     public static function buscarPorEmail($email) {
         $sql = "SELECT * FROM usuarios WHERE email = '$email'";
         $result = ConexaoBD::getConexao()->query($sql);
@@ -61,6 +60,4 @@ public static function atualizarSenha($idUsuario, $senhaHash) {
 
     return $linhasAfetadas > 0;
 }
-
-
 }

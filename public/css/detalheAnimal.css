@@ -87,8 +87,6 @@ body {
     margin-top: 20px;
 }
 
-/* ====== NOVOS ESTILOS PARA TABELA E FORMULÁRIO ====== */
-
 table {
     width: 100%;
     border-collapse: collapse;
@@ -174,7 +172,6 @@ form button[type="submit"]:hover {
     background-color: #ff9966;
 }
 
-/* Responsividade básica */
 @media (max-width: 768px) {
     .detalhes-animal,
     form,
