@@ -1,0 +1,70 @@
+/* Reset e box-sizing */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fef7f1; /* fundo bege suave */
+    margin: 2rem;
+    color: #333;
+}
+
+/* Título */
+h2 {
+    color: #ff7f50; /* coral/laranja alegre */
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+/* Tabela estilizada */
+table {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 2rem;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+    background-color: #fffaf5; /* fundo claro */
+    border: 2px solid #ffb347; /* borda laranja */
+}
+
+th, td {
+    padding: 12px 20px;
+    text-align: left;
+    border-bottom: 1px solid #ffb347;
+    font-size: 1rem;
+}
+
+th {
+    background-color: #ffb347; /* laranja */
+    color: white;
+    font-weight: 700;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* Link voltar */
+a {
+    display: block;
+    width: max-content;
+    margin: 0 auto;
+    padding: 12px 24px;
+    background-color: #ffb347;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+a:hover {
+    background-color: #ff9966;
+    cursor: pointer;
+}
