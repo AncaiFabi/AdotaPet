@@ -22,8 +22,9 @@ class UsuarioController {
         require __DIR__ . '/../views/login.php';
     }
 
-    public static function login() {
+public static function login() {
     session_start();
+    
     if ($_POST) {
 
         // Proteção CSRF
@@ -33,12 +34,11 @@ class UsuarioController {
 
         $usuario = Usuario::buscarPorEmail($_POST['email']);
 
-        // AQUI você coloca o var_dump para depurar:
-        var_dump($_POST['senha']);              // senha digitada no form
-        var_dump($usuario ? $usuario->senha : null); // hash que veio do banco
+        // Remova os var_dumps quando terminar de testar
+        // var_dump($_POST['senha']);              
+        // var_dump($usuario ? $usuario->senha : null); 
 
         if ($usuario && password_verify($_POST['senha'], $usuario->senha)) {
-
             $_SESSION['usuario_id'] = $usuario->id;
             $_SESSION['usuario_nome'] = $usuario->nome;
 
@@ -48,14 +48,20 @@ class UsuarioController {
             exit;
 
         } else {
-            echo "Email ou senha inválidos! <a href='index.php?p=usuario/formLogin'>Tentar novamente</a>";
+            // Salva a mensagem de erro na sessão
+            $_SESSION['login_erro'] = "Email ou senha inválidos!";
+            
+            // Redireciona para o formulário de login
+            header("Location: index.php?p=usuario/formLogin");
+            exit;
         }
     }
 }
 
 
+
     public static function recuperarSenha() {
-    session_start(); // ADICIONAR ISSO!
+    session_start();
 
     require_once __DIR__ . '/../models/Usuario.php';
 
@@ -68,19 +74,17 @@ class UsuarioController {
         if ($usuario) {
             $_SESSION['usuario_recuperar_id'] = $usuario->id;
 
-            echo "<h2>Definir Nova Senha</h2>
-                <form method='post' action='index.php?p=usuario/atualizarSenha'>
-                    <label>Nova Senha:</label><br>
-                    <input type='password' name='nova_senha' required><br><br>
-                    <button type='submit'>Atualizar Senha</button>
-                </form>";
+            // Exibe o formulário da nova senha
+            require __DIR__ . '/../views/definirNovaSenha.php';
         } else {
-            echo "Dados inválidos. <a href='index.php?p=usuario/recuperarSenha'>Tentar novamente</a>";
+            echo "Dados inválidos. <a href='index.php?p=recuperarSenha'>Tentar novamente</a>";
         }
     } else {
+        // Primeira vez que o usuário clicou no link de esqueci senha
         require __DIR__ . '/../views/recuperarSenha.php';
     }
 }
+
 
 
    public static function atualizarSenha() {

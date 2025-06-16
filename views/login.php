@@ -1,3 +1,14 @@
+<?php
+
+$erro = '';
+
+// Captura a mensagem de erro vinda da sessão (se houver)
+if (isset($_SESSION['login_erro'])) {
+    $erro = $_SESSION['login_erro'];
+    unset($_SESSION['login_erro']); // Remove para não repetir em outro acesso
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,8 +20,9 @@
     <div class="login-box">
         <h2>🐾 Login - Adote um Amigo 🐾</h2>
 
-        <?php if (isset($erro) && $erro): ?>
-            <p class="erro"><?= $erro ?></p>
+        <!-- Exibição da mensagem de erro, se existir -->
+        <?php if (!empty($erro)): ?>
+            <p class="erro" style="color: red; text-align: center;"><?= htmlspecialchars($erro) ?></p>
         <?php endif; ?>
 
         <form method="POST" action="index.php?p=usuario/login">
