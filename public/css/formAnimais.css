@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo geral */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F4D3A1;
+    color: #5A4D3F;
+}
+
+
+form {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff8e6;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    font-family: 'Poppins', sans-serif;
+}
+
+h2 {
+    text-align: center;
+    color: #5A4D3F;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+label {
+    display: block;
+    font-weight: 500;
+    color: #5A4D3F;
+    margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 16px;
+    background-color: #fff;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+button[type="submit"] {
+    background-color: #5A4D3F;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #3b2f27;
+}
+
+a[href*="animais"] {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 14px;
+    color: #0077cc;
+    text-align: center;
+    width: 100%;
+    text-decoration: none;
+}
+
+a[href*="animais"]:hover {
+    text-decoration: underline;
+}
+
+img {
+    display: block;
+    margin-top: 10px;
+}
+
+.navbar {
+    background-color: #6b5b43; /* tom marrom, ajuste se quiser */
+    padding: 10px 0;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* distribui os itens igualmente */
+}
+
+.navbar li {
+    margin: 0 20px 0 0; /* espaço entre os itens */
+    display: flex;
+    align-items: center;
+}
+
+.navbar li:last-child {
+    margin-right: 0;
+}
+
+.navbar a {
+    color: #ffe6b3;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.navbar a span {
+    margin-right: 6px;
+    font-size: 1.3em;
+}
+
+.navbar a:hover {
+    color: #ffb347;
+}
