@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Meus animais adotados </title>
-
-    <link rel="stylesheet" href="css/animaisAdotados.css" />
-    <link rel="stylesheet" href="css/home.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>🐾 Meus Animais Adotados</title>
+<link rel="stylesheet" href="css/adotados.css" />
+<link rel="stylesheet" href="css/home.css" />
 
 </head>
 <body>

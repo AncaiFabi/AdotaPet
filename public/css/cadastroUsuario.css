@@ -1,0 +1,85 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fef7f1;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: repeat;
+    background-size: 100px;
+}
+
+form {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    background-color: #fffaf5; /* fundo claro */
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 2px solid #ffb347; /* tom laranja alegre */
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="hidden"] {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus {
+    border-color: #ffa07a;
+    box-shadow: 0 0 8px rgba(255, 160, 122, 0.5);
+    outline: none;
+}
+
+button {
+    background-color: #ffb347; /* laranja */
+    color: #fff;
+    padding: 14px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #ff9966;
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+a {
+    display: block;
+    margin-top: 18px;
+    color: #ff7f50; /* coral/laranja */
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ff9966;
+    text-decoration: underline;
+}
