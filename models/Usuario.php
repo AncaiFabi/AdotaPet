@@ -63,7 +63,4 @@ public static function atualizarSenha($idUsuario, $senhaHash) {
 }
 
 
-
-
-
 }
