@@ -1,29 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Adota Pet</title>
-
-    <!-- CSS do menu e da página -->
-     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/home.css" />
-
+    <meta charset="UTF-8">
+    <title> 🐾 Adota Pet</title>
 </head>
 <body>
-
-<section class="logo-container">
-    <img src="../public/img/cabecalho.png" alt="Logo" class="img-logo">
-</section>
-<header>
-    <nav class="menu">
-        <a href="index.php?p=home">🏠 Início</a> |
-        <a href="index.php?p=animais">🐾 Adote</a> |
-        <a href="index.php?p=animal/adotados">🐾 Meus Animais Adotados</a> |
-        <a href="index.php?p=sobre">ℹ️ Sobre</a> |
-        <a href="index.php?p=usuario/logout">🚪 Sair</a>
-    </nav>
-</header>
+    <?php include 'header.php'; ?>
 <section class="hero" style="background-image: url('../public/img/logo.jpg')">
     <h1>Bem-vindo ao Adota Pet!</h1>
     <p>Encontre seu animalzinho aqui.</p>
@@ -69,8 +51,6 @@
 
     </section>
 
-<footer>
-    <p>© 2025 Adota Pet. Todos os direitos reservados.</p>
-</footer>
+<?php include 'footer.php'; ?>
 </body>
 </html>

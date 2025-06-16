@@ -24,11 +24,11 @@
 </html>
 
 <?php
-session_start();
-if (!isset($_SESSION['usuario_id'])) {
-    header("Location: index.php?p=login");
-    exit;
-}
+    session_start();
+    if (!isset($_SESSION['usuario_id'])) {
+        header("Location: index.php?p=login");
+        exit;
+    }
 ?>
 
 <h3>Animais para Adoção</h3>
@@ -55,12 +55,13 @@ if (!isset($_SESSION['usuario_id'])) {
 
     <?php foreach ($animais as $animal): ?>
         <tr>
-            <td>
-                <?php if (!empty($animal->imagem)): ?> //ADICIONAR IMAGENS DOS ANIMAIS
-                    <img src="<?= $animal->imagem ?>" alt="Foto de <?= $animal->nome ?>" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px;">
-                <?php else: ?>
-                    <span style="color: #aaa;">Sem imagem</span>
-                <?php endif; ?>
+            <td data-label="Imagem">
+                <?php 
+                    $caminhoImagem = !empty($animal->imagem) 
+                        ? $animal->imagem 
+                        : 'uploads/animais/padrao.webp'; 
+                ?>
+                <img src="<?= $caminhoImagem ?>" alt="Foto de <?= htmlspecialchars($animal->nome) ?>" style="width: 100px;">
             </td>
             <td><?= $animal->nome ?></td>
             <td><?= $animal->raca ?></td>

@@ -11,7 +11,8 @@ class UsuarioController {
     public static function cadastrar() {
         if ($_POST) {
             Usuario::cadastrar($_POST);
-            echo "Usuário cadastrado com sucesso! <a href='index.php?p=login'>Ir para login</a>";
+            header ("Location:index.php?p=login");
+            exit;
         }
     }
 
@@ -107,11 +108,12 @@ public static function login() {
 
         unset($_SESSION['usuario_recuperar_id']);
 
-        if ($resultado) {
-            echo "Senha atualizada com sucesso! <a href='index.php?p=usuario/formLogin'>Ir para login</a>";
-        } else {
-            echo "Falha ao atualizar senha.";
-        }
+                if ($resultado) {
+                    header("Location: index.php?p=usuario/formLogin");
+                    exit;
+                } else {
+                    echo "❌ Falha ao atualizar senha. <a href='index.php?p=usuario/formNovaSenha'>Tentar novamente</a>";
+                }
     } else {
         echo "Acesso inválido.";
     }

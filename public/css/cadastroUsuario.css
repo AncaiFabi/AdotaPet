@@ -1,5 +1,5 @@
-
-* {
+* 
+{
     box-sizing: border-box;
 }
 
@@ -11,9 +11,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-repeat: repeat;
-    background-size: 100px;
 }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px; /* espaço entre form e link */
+    width: 100%;
+    max-width: 400px;
+}
+
 
 form {
     width: 100%;
