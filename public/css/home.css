@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-/* Corpo geral */
 body {
     font-family: Arial, sans-serif;
     background-color: #F4D3A1;
@@ -51,7 +50,6 @@ body {
     z-index: 1;
 }
 
-/* Menu */
 .menu {
     background-color: #5A4D3F;
     padding: 20px 0;
@@ -78,14 +76,12 @@ body {
     color: #FFD580;
 }
 
-/* Estilo do conteúdo principal */
 main {
     background-color: #F4D3A1;
     padding: 40px 20px;
     text-align: center;
 }
 
-/* Corrige o espaçamento do parágrafo */
 .main p {
     padding: 10px 10px;
 }
@@ -138,7 +134,6 @@ main {
     object-fit: cover;
 }
 
-/* Rodapé */
 footer {
     background-color: #5A4D3F;
     color: #FFF;

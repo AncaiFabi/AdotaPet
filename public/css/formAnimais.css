@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-/* Corpo geral */
 body {
     font-family: Arial, sans-serif;
     background-color: #F4D3A1;
@@ -95,7 +94,7 @@ img {
 }
 
 .navbar {
-    background-color: #6b5b43; /* tom marrom, ajuste se quiser */
+    background-color: #6b5b43;
     padding: 10px 0;
 }
 
@@ -105,11 +104,11 @@ img {
     padding: 0 24px;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* distribui os itens igualmente */
+    justify-content: space-between;
 }
 
 .navbar li {
-    margin: 0 20px 0 0; /* espaço entre os itens */
+    margin: 0 20px 0 0;
     display: flex;
     align-items: center;
 }

@@ -1,24 +1,22 @@
-/* Reset e box-sizing */
+
 * {
     box-sizing: border-box;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #fef7f1; /* fundo bege suave */
+    background-color: #fef7f1; 
     margin: 2rem;
     color: #333;
 }
 
-/* Título */
 h2 {
-    color: #ff7f50; /* coral/laranja alegre */
+    color: #ff7f50; 
     text-align: center;
     margin-bottom: 1.5rem;
     font-size: 2rem;
 }
 
-/* Tabela estilizada */
 table {
     width: 100%;
     max-width: 900px;
@@ -28,8 +26,8 @@ table {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
-    background-color: #fffaf5; /* fundo claro */
-    border: 2px solid #ffb347; /* borda laranja */
+    background-color: #fffaf5; 
+    border: 2px solid #ffb347; 
 }
 
 th, td {
@@ -40,7 +38,7 @@ th, td {
 }
 
 th {
-    background-color: #ffb347; /* laranja */
+    background-color: #ffb347; 
     color: white;
     font-weight: 700;
 }

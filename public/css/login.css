@@ -1,18 +1,15 @@
-/* Estilos para a página de login - tema adoção de animais 🐾 */
-
 * {
     box-sizing: border-box;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #fef7f1; /* fundo bege suave */
+    background-color: #fef7f1;
     margin: 0;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    /*background-image: url('https://i.imgur.com/UvBt6ln.png'); /* opcional: uma textura leve de patinhas */
     background-repeat: repeat;
     background-size: 100px;
 }
@@ -21,15 +18,15 @@ body {
     width: 100%;
     max-width: 400px;
     padding: 30px;
-    background-color: #fffaf5; /* fundo claro */
+    background-color: #fffaf5;
     border-radius: 12px;
     box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
     text-align: center;
-    border: 2px solid #ffb347; /* tom laranja alegre */
+    border: 2px solid #ffb347; 
 }
 
 h2 {
-    color: #ff7f50; /* coral/laranja para dar tom alegre */
+    color: #ff7f50;
     margin-bottom: 25px;
     display: flex;
     align-items: center;
@@ -57,7 +54,7 @@ input[type="password"]:focus {
 }
 
 button {
-    background-color: #ffb347; /* laranja */
+    background-color: #ffb347;
     color: #fff;
     padding: 14px;
     width: 100%;
@@ -78,4 +75,3 @@ button:hover {
     margin-bottom: 15px;
     font-weight: bold;
 }
-

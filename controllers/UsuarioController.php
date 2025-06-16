@@ -28,38 +28,28 @@ public static function login() {
     
     if ($_POST) {
 
-        // Proteção CSRF
         if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
             die('Erro de segurança: token CSRF inválido.');
         }
 
-        $usuario = Usuario::buscarPorEmail($_POST['email']);
-
-        // Remova os var_dumps quando terminar de testar
-        // var_dump($_POST['senha']);              
-        // var_dump($usuario ? $usuario->senha : null); 
+        $usuario = Usuario::buscarPorEmail($_POST['email']); 
 
         if ($usuario && password_verify($_POST['senha'], $usuario->senha)) {
             $_SESSION['usuario_id'] = $usuario->id;
             $_SESSION['usuario_nome'] = $usuario->nome;
 
-            setcookie('usuario_nome', $usuario->nome, time() + 3600, "/"); // Cookie válido por 1 hora
-
+            setcookie('usuario_nome', $usuario->nome, time() + 3600, "/"); 
             header("Location: index.php?p=home");
             exit;
 
         } else {
-            // Salva a mensagem de erro na sessão
             $_SESSION['login_erro'] = "Email ou senha inválidos!";
-            
-            // Redireciona para o formulário de login
+
             header("Location: index.php?p=usuario/formLogin");
             exit;
         }
     }
 }
-
-
 
     public static function recuperarSenha() {
     session_start();
@@ -75,13 +65,11 @@ public static function login() {
         if ($usuario) {
             $_SESSION['usuario_recuperar_id'] = $usuario->id;
 
-            // Exibe o formulário da nova senha
             require __DIR__ . '/../views/definirNovaSenha.php';
         } else {
             echo "Dados inválidos. <a href='index.php?p=recuperarSenha'>Tentar novamente</a>";
         }
     } else {
-        // Primeira vez que o usuário clicou no link de esqueci senha
         require __DIR__ . '/../views/recuperarSenha.php';
     }
 }
@@ -118,16 +106,10 @@ public static function login() {
         echo "Acesso inválido.";
     }
 }
-
-
     public static function logout() {
         session_start();
         session_destroy();
         header("Location: index.php?p=login");
         exit;
     }
-
-    /*public static function recuperarSenha() {
-        require __DIR__ . '/../views/recuperarSenha.php';
-    }*/
 }
