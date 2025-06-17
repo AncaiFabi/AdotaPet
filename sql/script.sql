@@ -28,13 +28,9 @@ CREATE TABLE IF NOT EXISTS categoria (
     nome VARCHAR(50) NOT NULL
 );
 
--- Exemplo de categorias para já popular:
 INSERT INTO categoria (nome) VALUES
 ('Cachorro'),
-('Gato'),
-('Coelho'),
-('Pássaro');
-
+('Gato');
 
 INSERT INTO animais (nome, raca, sexo, descricao, idade, categoria_id)VALUES
 ('Rex', 'Pastor Alemão', 'M', 'Inteligente e protetor.', 5, 1),
